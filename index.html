@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap" rel="stylesheet">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+
+    <title>Common Threads</title>
+
+    <style>
+        body {
+            font-family: "Quicksand", "sans-serif";
+        }
+
+        #title{margin: auto;}
+
+        #title h1 {
+            text-align: center;
+            font-weight: 700;
+            margin-top: 30px;
+        }
+
+        table {
+            margin: auto;
+            margin-top: 30px;
+            border-collapse: collapse;
+        }
+
+        th {
+            border: 1px black solid;
+            padding: 15px 40px;
+            text-align: center;
+        }
+
+        td {
+            border: 1px black solid;
+            padding: 15px;
+            text-align: center;
+        }
+
+        td:hover {
+            background-color: aliceblue;
+        }
+
+        .row-header{
+            background-color: aquamarine;
+        }
+
+        .colors th{
+            background-color: azure;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.onload = function () {
+            var x = document.querySelectorAll('td');
+            for (i = 0; i < x.length; i++)
+            // uses setAttribute instead of eventListener to specify the index
+                document.querySelectorAll('td')[i].setAttribute('onclick', 'changeColor'+'('+i+')');
+        }
+
+        function changeColor(element) {
+            let box = document.querySelectorAll('td')[element];
+            console.log();
+            if(box.style.backgroundColor == '')
+                box.style.backgroundColor = 'red';
+            else if(box.style.backgroundColor == 'red')
+                box.style.backgroundColor = 'green';
+            else if(box.style.backgroundColor == 'green')
+                box.style.backgroundColor = '';
+        }
+    </script>
+
+    <div id="title">
+        <h1>Common Threads</h1>
+    </div>
+    
+
+    <!-- Clothing Table-->
+    <table>
+        <tr class="colors">
+            <th style="empty-cells: hide; border: 0; background-color: white;"></th>
+            <th>Red</th>
+            <th>Orange</th>
+            <th>Yellow</th>
+            <th>Green</th>
+            <th>Blue</th>
+            <th>Purple</th>
+            <th>Pink</th>
+        </tr>
+        <tr class="hat">
+            <th class="row-header">Hat</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="glasses">
+            <th class="row-header">Glasses</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="pendant">
+            <th class="row-header">Pendant</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="shirt">
+            <th class="row-header">Shirt</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="pants">
+            <th class="row-header">Pants</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr class="shoes">
+            <th class="row-header">Shoes</th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+    <!-- Characters and Items Table-->
+    <table>
+        <tr>
+            <th colspan="6" style="background-color: azure;">Character</th>
+        </tr>
+        <tr>
+            <td>Panda</td>
+            <td>Skeleton</td>
+            <td>Alligator</td>
+            <td>Chicken</td>
+            <td>Robot</td>
+            <td>Unicorn</td>
+        </tr>
+        <tr>
+            <th colspan="6" style="background-color: azure;">Item</th>
+        </tr>
+        <tr>
+            <td>Fish</td>
+            <td>Skateboard</td>
+            <td>Groceries</td>
+            <td>Spray Can</td>
+            <td>Phone</td>
+            <td>Boom Box</td>
+        </tr>
+    </table>
+</body>
+
+</html>
